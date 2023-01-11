@@ -25,4 +25,4 @@ Route::get('/create-bookmark', function() {
     return view('bookmarks/create-bookmark');
 });
 
-Route::post('/my-bookmarks', [BookmarkController::class, 'show']);
+Route::post('/my-bookmarks', [BookmarkController::class, 'create']);

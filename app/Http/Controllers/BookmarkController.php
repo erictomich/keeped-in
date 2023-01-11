@@ -12,14 +12,13 @@ class BookmarkController extends Controller
         return view('bookmarks.my-bookmarks', compact('bookmarks'));
     } 
 
-    public function show(Request $request) {
+    public function create(Request $request) {
         $post = $request->post();
         $post = array_diff_key($post, ['_token' => '']);
 
         $this->store($request);
 
-        $bookmarks = Bookmark::where('user_id', 1)->get();
-        return view('bookmarks.my-bookmarks', compact('bookmarks'));
+        return redirect('/my-bookmarks');
     }
 
     public function store(Request $request) {

@@ -1,34 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a new bookmark</title>
-    <style>
-        .campos {
-            width: 500px;
-        }
-        .campos > div {
-            display: flex;
-            margin: 10px;
-            
-        }
-        .campos > div > label {
-            width: 150px;
-            text-align: right;
-            padding: 0px 10px;
-            
-        }
-        .container-botao {
-            padding: 30px;
-            flex-direction: row;
-            justify-content: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Create a new bookmark</h1>
+@extends('template.dashboard')
+
+@section('content')
+<style>
+    .campos {
+        width: 500px;
+    }
+    .campos > div {
+        display: flex;
+        margin: 10px;
+        
+    }
+    .campos > div > label {
+        width: 150px;
+        text-align: right;
+        padding: 0px 10px;
+        
+    }
+    .container-botao {
+        padding: 30px;
+        flex-direction: row;
+        justify-content: center;
+    }
+</style>
+
+<h1>Create a new bookmark</h1>
 
     <form method="POST" action="/my-bookmarks">
         @csrf
@@ -49,5 +44,5 @@
         </div>
         
     </form>
-</body>
-</html>
+@endsection
+

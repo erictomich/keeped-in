@@ -31,12 +31,18 @@ class TagController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTagRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTagRequest $request)
+    public function store($data = array())
     {
-        //
+        $tag = new Tag;
+        $tag->user_id = 1;
+        $tag->tag = $data["tag"];
+        $tag->save();
+
+
+        return $tag->id;
     }
 
     /**

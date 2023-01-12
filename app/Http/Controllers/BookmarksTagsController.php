@@ -34,9 +34,15 @@ class BookmarksTagsController extends Controller
      * @param  \App\Http\Requests\StoreBookmarksTagsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBookmarksTagsRequest $request)
+    public function store($data = array())
     {
-        //
+        $bookmark_tag = new BookmarksTags;
+        $bookmark_tag->user_id = $data["user_id"];
+        $bookmark_tag->bookmark_id = $data["bookmark_id"];
+        $bookmark_tag->tag_id = $data["tag_id"];
+        $bookmark_tag->save();
+
+        return $bookmark_tag;
     }
 
     /**

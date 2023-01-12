@@ -13,10 +13,9 @@ class Bookmark extends Model
     protected $primaryKey = 'bookmark_id';
 
 
-    public function tags() {
-        
-        return $this->morphToMany(Tag::class, 'bookmarks_tags');
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'bookmarks_tags', 'bookmark_id', 'tag_id');
     }
 }
 
-//https://www.nicesnippets.com/blog/laravel-9-factory-example-tutorial

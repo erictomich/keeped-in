@@ -9,10 +9,19 @@ use App\Http\Controllers\BookmarksTagsController;
 use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\DB;
 
+
 class BookmarkController extends Controller
 {
-    public function index() {
-        $bookmarks = Bookmark::where('user_id', 1)->get();
+    public function index($tag = 'all') {
+        
+        $bookmark  = new Bookmark();
+        
+        if ($tag == 'all') {
+            $bookmarks = $bookmark->allBookmarks();
+        } else {
+            $bookmarks = $bookmark->bookmarksByTag($tag);
+        }
+        
         return view('bookmarks.my-bookmarks', compact('bookmarks'));
     } 
 

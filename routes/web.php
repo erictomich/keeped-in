@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\ListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/my-bookmarks', [BookmarkController::class, 'index']);
+Route::get('/my-bookmarks/{tag?}', [BookmarkController::class, 'index'])->name('bookmarks');
 
 Route::get('/create-bookmark', function() {
     return view('bookmarks/create-bookmark');
 });
 
 Route::post('/my-bookmarks', [BookmarkController::class, 'create']);
+
+Route::get('/my-lists', [ListController::class, 'index'])->name('lists');

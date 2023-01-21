@@ -39,7 +39,9 @@
                     <option value="1">LinkedIn</option>
                     <option value="2">YouTube</option>
                     <option value="3">Instagram</option>
-                    <option value="4">Site</option>
+                    <option value="4">Pinterest</option>
+                    <option value="5">Facebook</option>
+                    <option value="6">Site</option>
                 </select>
             </div>
             <div class="container-botao"><button type="submit">Salvar</button></div>
